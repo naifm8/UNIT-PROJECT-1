@@ -4,7 +4,7 @@ import uuid
 
 def patient_menue(patient):
     while True:
-        print("\n   ====WELCOM!====   ")
+        print("\n   ==== WELCOM! ====   ")
         print("==== PATIENT MENU ====\n")
         print("1. View Available Doctors")
         print("2. Use Symptom Checker")

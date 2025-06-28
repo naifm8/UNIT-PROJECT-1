@@ -1,4 +1,4 @@
-from patient import register_patient, login_patient, patient_menue, view_doctors, book_appointment
+from users.patient import register_patient, login_patient, patient_menue, view_doctors, book_appointment
 
 while True:
     print("\n1. Register as Patient\n2. Login as Patient\n3. Exit")
