@@ -23,17 +23,17 @@ def patient_menue(patient):
         elif choice == "2":
             symptom_checker.symptom_checker()
         elif choice == "3":
-            book_appointment(input("Enter your name: "))
+            book_appointment(patient["full_name"])
         elif choice == "4":
             pass
         elif choice == "5":
-            pass
+            view_my_appointments(patient["full_name"])
         elif choice == "6":
             pass
         elif choice == "7":
             pass
         elif choice == "8":
-            pass
+            exit()
         else:
             break
 
@@ -219,3 +219,16 @@ def book_appointment(patient_name):
     appointments.append(appointment)
     save_json('data/appointments.json', appointments)
     print("Appointment booked successfully.")
+
+def view_my_appointments(patient_name):
+    appointments = load_json("data/appointments.json")
+
+    my_appointments = [a for a in appointments if a['patient'].lower() == patient_name.lower()]
+
+    print('\n==== My Appointments ====')
+    if not my_appointments:
+        print("You have no appointments yet")
+        return
+    
+    for i, app in enumerate(my_appointments, 1):
+        print(f"{i}. Doctor: {app['doctor']} | Day: {app['day']} | Status: {app['status']} | ID: {app['appointment_id']}")

@@ -26,4 +26,4 @@ while True:
 #patient.view_doctors()
 
 #patient.book_appointment("Naif Alghamdi")
-#patient.book_appointment("Faisla Alghamdi")
+#patient.book_appointment()

@@ -5,5 +5,12 @@
     "doctor": "Amani Khateeb",
     "day": "Friday",
     "status": "pending"
+  },
+  {
+    "appointment_id": "c2e90b5d-a4d6-4d48-97fc-0a144310361a",
+    "patient": "Naif Alghamdi",
+    "doctor": "Amani Khateeb",
+    "day": "Friday",
+    "status": "pending"
   }
 ]
