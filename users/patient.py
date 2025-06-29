@@ -1,4 +1,6 @@
 from utils.file_handler import load_json, save_json
+from utils.helpers import view_doctors
+import symptom_checker
 import re
 import uuid
 
@@ -17,11 +19,11 @@ def patient_menue(patient):
 
         choice = input("Choose an option (1-8): ").strip()
         if choice == "1":
-            pass 
+             view_doctors()
         elif choice == "2":
-            pass 
+            symptom_checker.symptom_checker()
         elif choice == "3":
-            pass
+            book_appointment(input("Enter your name: "))
         elif choice == "4":
             pass
         elif choice == "5":
@@ -170,14 +172,6 @@ def login_patient():
     print("Too many failed attempts. returning to menu")
     return None
 
-def view_doctors():
-    doctors = load_json('data/doctors.json')
-    if not doctors:
-        print("No doctors found.")
-    
-    for doc in doctors:
-        print(f"{doc["name"]} - {doc["specialty"]} (Available: {', '.join(doc["available_days"])})")
-
 
 def book_appointment(patient_name):
     doctors = load_json('data/doctors.json')
@@ -193,22 +187,29 @@ def book_appointment(patient_name):
         if doctor:
             break
         print("Doctor not found. please try again.")
+
+    valid_day_names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    available_days = [d.lower() for d in doctor.get('available_days', [])]
     
     while True:
         day = input("Enter the day: ")
         if not day:
             print("Day cant be empty")
             continue
-        #Check if day is in doctor's available days
-        if day in doctor.get('available_days', []):
+        #check if day is entered correctly
+        if day.capitalize() in valid_day_names:
             break
-        print(f"Doctor is not available on {day}. Doctor availability days: {", ".join(doctor.get('available_days', []))}")
+        #Check if day is in doctor's available days
+        if day.lower() in available_days:
+            break
+        available = ", ".join(doctor.get('available_days', []))
+        print(f"Doctor is not available on {day.capitalize()}. Doctor availability days: {", ".join(doctor.get('available_days', []))}")
 
     appointment = {
         "appointment_id" : str(uuid.uuid4()),
         "patient" : patient_name,
         "doctor" : doctor['name'],
-        "day" : day,
+        "day" : day.capitalize(),
         "status" : "pending"
     }
 
@@ -217,4 +218,4 @@ def book_appointment(patient_name):
         appointments = []
     appointments.append(appointment)
     save_json('data/appointments.json', appointments)
-    print("Appointment booked.")
+    print("Appointment booked successfully.")
