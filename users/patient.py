@@ -25,7 +25,7 @@ def patient_menue(patient):
         elif choice == "3":
             book_appointment(patient["full_name"])
         elif choice == "4":
-            pass
+            cancel_appointment(patient["full_name"])
         elif choice == "5":
             view_my_appointments(patient["full_name"])
         elif choice == "6":
@@ -232,3 +232,35 @@ def view_my_appointments(patient_name):
     
     for i, app in enumerate(my_appointments, 1):
         print(f"{i}. Doctor: {app['doctor']} | Day: {app['day']} | Status: {app['status']} | ID: {app['appointment_id']}")
+
+def cancel_appointment(patient_name):
+    appointments = load_json("data/appointments.json")
+    my_appointments = [a for a in appointments if a["patient"].lower() == patient_name.lower()]
+
+    if not my_appointments:
+        print("\nYou have no appointments to cancel")
+        return
+    
+    print("\n==== Your Appointments ====")
+    for a in my_appointments:
+        print(f"- ID: {a['appointment_id']} | Doctor: {a['doctor']} | Day: {a['day']} | Status: {a['status']}")
+    
+    while True:
+        appointment_id = input("\nEnter the Appointment ID you want to cancel (or '0' to go back): ").strip()
+        if appointment_id == "0":
+            return
+        if not appointment_id:
+            print(" Appointment ID cannot be empty.")
+            continue
+
+        # Find matching appointment
+        match = next((a for a in appointments if a["appointment_id"] == appointment_id and a["patient"].lower() == patient_name.lower()), None)
+
+        if not match:
+            print(" No appointment found with that ID for your account.")
+            continue
+
+        appointments.remove(match)
+        save_json("data/appointments.json", appointments)
+        print(" Appointment canceled successfully.")
+        break
