@@ -3,6 +3,7 @@ from utils.helpers import view_doctors
 import symptom_checker
 import re
 import uuid
+import os
 
 def patient_menue(patient):
     while True:
@@ -29,7 +30,7 @@ def patient_menue(patient):
         elif choice == "5":
             view_my_appointments(patient["full_name"])
         elif choice == "6":
-            pass
+            view_medical_history(patient["full_name"])
         elif choice == "7":
             pass
         elif choice == "8":
@@ -264,3 +265,23 @@ def cancel_appointment(patient_name):
         save_json("data/appointments.json", appointments)
         print(" Appointment canceled successfully.")
         break
+
+def view_medical_history(paitent_name):
+    record_file = f"data/records/{paitent_name}.json"
+
+    if not os.path.exists(record_file):
+        print("\n You have no medical history yet.")
+        return
+    
+    records = load_json(record_file)
+
+    if not records:
+        print("\n Your medical history is empty.")
+        return
+    
+    print("\n==== YOUR MEDICAL HISTORY ====")
+    for i, record in enumerate(records, 1):
+        print(f"\n{i}. Date: {record['date']}")
+        print(f"   Doctor: {record['doctor']}")
+        print(f"   Diagnosis: {record['diagnosis']}")
+        print(f"   Prescription: {record['prescription']}")
