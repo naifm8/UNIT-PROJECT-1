@@ -1,29 +1,18 @@
-from users.patient import register_patient, login_patient, patient_menue, view_doctors, book_appointment
-from symptom_checker import symptom_checker, recommend_doctors_by_specialties
+from users.patient import register_patient, login_patient, patient_menue
+from users.doctor import login_doctor
 
 while True:
-    print("\n1. Register as Patient\n2. Login as Patient\n3. Exit")
-    chice = input("Choose (1-3): ")
+    print("\n1. Register as Patient\n2. Login as Patient\n3. Login as a doctor")
+    choise = input("Choose (1-3): ")
 
-    if chice == "1":
+    if choise == "1":
         register_patient()
-    elif chice == "2":
+    elif choise == "2":
         patient = login_patient()
         if patient:
             patient_menue(patient)
-    elif chice == "3":
-        break
-
-
-
-
-#patient.register_patient()
-#patient.login_patient()
-
-#patient.patient_menue()
-#symptom_checker()
-
-#patient.view_doctors()
-
-#patient.book_appointment("Naif Alghamdi")
-#patient.book_appointment()
+    elif choise == "3":
+        login_doctor()
+    elif choise == "4":
+        exit()
+    else: print("Invalid input")

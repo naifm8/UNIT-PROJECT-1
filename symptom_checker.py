@@ -3,19 +3,25 @@ from utils.file_handler import load_json
 DOCTORS_FILE = "data/doctors.json"
 
 def symptom_checker():
-    print("\n==== Symptom Checker ====")
-    print("Please answer the following questions (yes/no): ")
+    print("\n--- Symptom Checker ---")
 
-    #collect responses
-    skin = input("Skin issues (rash, acne, itchiness)? ").strip().lower()
-    chest = input("Chest pain or breathing difficulty? ").strip().lower()
-    stomach = input("Stomach ache or nausea? ").strip().lower()
-    fever = input("Fever, cough, or cold? ").strip().lower()
-    headache = input("Headache or dizziness? ").strip().lower()
+    def ask_yes_no(q):
+        while True:
+            a = input(q + " (yes/no): ").strip().lower()
+            if a in ["yes", "no"]:
+                return a
+            print(" Please enter 'yes' or 'no'.")
+
+    # Ask questions
+    skin = ask_yes_no("Do you have skin issues?")
+    chest = ask_yes_no("Do you feel chest pain?")
+    stomach = ask_yes_no("Do you have stomach pain?")
+    fever = ask_yes_no("Do you have fever or cough?")
+    headache = ask_yes_no("Do you have headache or dizziness?")
 
     specialties = []
 
-    #if tow symptoms occured
+    # Priority combos
     if fever == "yes" and skin == "yes":
         specialties = ["Dermatologist"]
     elif chest == "yes" and headache == "yes":
@@ -23,7 +29,7 @@ def symptom_checker():
     elif stomach == "yes" and fever == "yes":
         specialties = ["Gastroenterologist"]
 
-    #if one symptom occured
+    # Fallback
     if not specialties:
         if skin == "yes":
             specialties.append("Dermatologist")
@@ -35,28 +41,11 @@ def symptom_checker():
             specialties.append("General Physician")
         if headache == "yes":
             specialties.append("Neurologist")
+        if not specialties:
+            specialties = ["General Physician"]
 
-    #default if still empty
-    if not specialties:
-        specialties.append("General Physician")
-
-    #result
-    print("\n🩺 Suggested specialties based on your symptoms:")
+    print("\n🩺 Based on your symptoms, we recommend:")
     for s in specialties:
         print(f" - {s}")
 
-    recommend_doctors_by_specialties(specialties)
-
-def recommend_doctors_by_specialties(specialties):
-    doctors = load_json(DOCTORS_FILE)
-
-    for specialty in specialties:
-        print(f"\n📋 Available {specialty}s:")
-        matching = [d for d in doctors if d["specialty"].lower() == specialty.lower()]
-        if not matching:
-            print(" No doctors found.")
-        else:
-            for doc in matching:
-                name = doc.get("name")
-                days = ", ".join(doc.get("available_days", []))
-                print(f" {name} (Available: {days})")
+    return specialties

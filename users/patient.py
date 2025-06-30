@@ -10,38 +10,33 @@ def patient_menue(patient):
         print("\n   ==== WELCOM! ====   ")
         print("==== PATIENT MENU ====\n")
         print("1. View Available Doctors")
-        print("2. Use Symptom Checker")
-        print("3. Book Appointment")
-        print("4. Cancel Appointments")
-        print("5. View My Appointments")
-        print("6. View My Medical History")
-        print("7. Update My Profile")
-        print("8. Logout")
+        print("2. Book Appointment")
+        print("3. Cancel Appointments")
+        print("4. View My Appointments")
+        print("5. View My Medical History")
+        print("6. Logout")
 
-        choice = input("Choose an option (1-8): ").strip()
+        choice = input("Choose an option (1-6): ").strip()
         if choice == "1":
              view_doctors()
         elif choice == "2":
-            symptom_checker.symptom_checker()
+            specialties = symptom_checker.symptom_checker()
+            book_appointment(patient["full_name"], specialties)
         elif choice == "3":
-            book_appointment(patient["full_name"])
-        elif choice == "4":
             cancel_appointment(patient["full_name"])
-        elif choice == "5":
+        elif choice == "4":
             view_my_appointments(patient["full_name"])
-        elif choice == "6":
+        elif choice == "5":
             view_medical_history(patient["full_name"])
-        elif choice == "7":
-            pass
-        elif choice == "8":
+        elif choice == "6":
             exit()
         else:
-            break
+            print("Invalid input, choose: 1-7")
 
     
 
 def register_patient():
-    print("\n====PATIENT REGISTRATION====\n")
+    print("\n==== PATIENT REGISTRATION ====\n")
     patients = load_json('data/patients.json')
 
     #To validate username
@@ -145,7 +140,7 @@ def register_patient():
     print("Registered successfully!")
 
 def login_patient():
-    print("\n====PATIENT LOGIN====\n")
+    print("\n==== PATIENT LOGIN ====\n")
     patients = load_json('data/patients.json')
     if not patients:
         print("No registerd patients found.")
@@ -174,52 +169,67 @@ def login_patient():
     return None
 
 
-def book_appointment(patient_name):
+def book_appointment(patient_name, specialties=None):
     doctors = load_json('data/doctors.json')
-    view_doctors()
+    if not doctors:
+        print(" No doctors available at the moment.")
+        return
 
+    # Filter doctors based on specialties
+    if specialties:
+        doctors = [d for d in doctors if d['specialty'] in specialties]
+
+    if not doctors:
+        print(" No doctors available for the selected specialties.")
+        return
+
+    print("\n These doctors are recommended:")
+    for i, doc in enumerate(doctors, 1):
+        print(f"{i}. {doc['name']} - {doc['specialty']} (Available: {', '.join(doc['available_days'])})")
+
+    # Choose doctor
     while True:
-        doctor_name = input("Enter the name of the doctor you want to book: ")
-        #Validation for the doctor input
+        doctor_name = input("Enter the name of the doctor you want to book: ").strip()
         if not doctor_name:
-            print("Doctor name can't be empty")
+            print(" Doctor name can't be empty.")
             continue
-        doctor = next((d for d in doctors if d['name'].lower() == doctor_name.lower()), None)
+        def normalize_name(name):
+            return name.replace("-", " ").replace("_", " ").lower().strip()
+        doctor = next((d for d in doctors if normalize_name(d['name']) == normalize_name(doctor_name)),None)
         if doctor:
             break
-        print("Doctor not found. please try again.")
+        print(" Doctor not found. Please try again.")
 
-    valid_day_names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    # Choose day
     available_days = [d.lower() for d in doctor.get('available_days', [])]
-    
+
     while True:
-        day = input("Enter the day: ")
+        day = input("Enter the day you want to book: ").strip()
         if not day:
-            print("Day cant be empty")
+            print(" Day can't be empty.")
             continue
-        #check if day is entered correctly
-        if day.capitalize() in valid_day_names:
-            break
-        #Check if day is in doctor's available days
+
         if day.lower() in available_days:
             break
-        available = ", ".join(doctor.get('available_days', []))
-        print(f"Doctor is not available on {day.capitalize()}. Doctor availability days: {", ".join(doctor.get('available_days', []))}")
+        print(f" Doctor is not available on {day}. Available: {', '.join(doctor.get('available_days', []))}")
 
+    # Save appointment
+    import uuid
     appointment = {
-        "appointment_id" : str(uuid.uuid4()),
-        "patient" : patient_name,
-        "doctor" : doctor['name'],
-        "day" : day.capitalize(),
-        "status" : "pending"
+        "appointment_id": str(uuid.uuid4()),
+        "patient": patient_name,
+        "doctor": doctor["name"],
+        "day": day.capitalize(),
+        "status": "pending"
     }
 
-    appointments = load_json('data/appointments.json')
+    appointments = load_json("data/appointments.json")
     if not isinstance(appointments, list):
         appointments = []
     appointments.append(appointment)
-    save_json('data/appointments.json', appointments)
-    print("Appointment booked successfully.")
+    save_json("data/appointments.json", appointments)
+
+    print(f"\n Appointment booked with {doctor['name']} on {day.capitalize()}.")
 
 def view_my_appointments(patient_name):
     appointments = load_json("data/appointments.json")
@@ -232,7 +242,7 @@ def view_my_appointments(patient_name):
         return
     
     for i, app in enumerate(my_appointments, 1):
-        print(f"{i}. Doctor: {app['doctor']} | Day: {app['day']} | Status: {app['status']} | ID: {app['appointment_id']}")
+        print(f"\n{i}. Doctor: {app['doctor']} | Day: {app['day']} | Status: {app['status']} | ID: {app['appointment_id']}")
 
 def cancel_appointment(patient_name):
     appointments = load_json("data/appointments.json")
@@ -263,7 +273,7 @@ def cancel_appointment(patient_name):
 
         appointments.remove(match)
         save_json("data/appointments.json", appointments)
-        print(" Appointment canceled successfully.")
+        print(" \nAppointment canceled successfully.")
         break
 
 def view_medical_history(paitent_name):
