@@ -1,45 +1,108 @@
-# UNIT-PROJECT-1
+<div align="center">
 
+# 🏥 Clinic Management System (Doctor & Patient)
 
+[![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)](https://www.python.org/)
+[![Status](https://img.shields.io/badge/status-Complete-brightgreen)]()
+[![License](https://img.shields.io/badge/license-MIT-lightgrey)]()
+[![Made with JSON](https://img.shields.io/badge/Data-JSON-yellow)]()
 
-## Based on what you’ve learned until now , create a project of your choosing (impress us with your imagination) . This project must at least satisfy the following minimum requirements :
+</div>
 
-- Must be interactive on CLI.
-- Use your coding skills in Python accurately.
-- Organize Your Code into modules & (or packages)
-- Use git & Github to track changes in your code.
+---
 
-## Example Project :  An online Grocery Store :
+This is a beginner-friendly Python project that simulates how a small clinic operates.  
+It includes two main user roles: **Doctors** and **Patients** — each with their own menus and functions.
 
-#### Overview : An online store that sells fruits to customers. This online store has 2 main users. The customer and the manager of the store . Each one of them should be able to do the following tasks for the store to function properly . 
+The system focuses on:
+- Booking appointments
+- Recommending medicines based on symptoms
+- Saving patient history with dosage and prescriptions
 
-### Features & User Stories
-#### As a customer I should be able to do the following :
-- Browse  Products . 
-- View the product info (summary, specs, price, quantity , etc.)
-- Search for Products.
-- Get recommendations for my next purchase based on my purchase history.
-- Add Products to the shopping cart .
-- Remove a product from the shopping cart.
-- List the products in my shopping cart. 
-- Continue to checkout . 
-- Fill in my address for delivery.
-- Get receipt of my purchases.
-- Check delivery status . 
+---
 
+## 📋 How the System Works
 
+When you run the program, a main menu appears:
 
-#### Usage :
- Explain to the user how to use your project . 
- for example:
- - type in search product_name to search for a product.
- - type in list_products to show all the products in the grocery.
- - type in show product_name to get information about this product.
- - type in buy product_name to buy the product . 
- - and so on...
+```
+1. Register as Patient  
+2. Login as Patient  
+3. Login as Doctor  
+4. Exit
+```
 
+---
 
-### For your project. Edit this README.md file to include your own project name,  overview, user stories, and usage. 
+### 👨‍💻 Patient Menu
 
-### NOTE: before submitting the final project, please do the following command:
-`pip freeze > requirements.txt` to enable use to know & use the packages used in your project.
+After logging in, a patient can:
+
+- View Available Doctors  
+- Book Appointment  
+- View My Appointments  
+- Cancel Appointments  
+- View My Medical History  
+- Logout
+
+---
+
+### 🧑‍⚕️ Doctor Menu
+
+After logging in, a doctor can:
+
+- View My Appointments  
+- Add Diagnosis & Prescription  
+- View Patient Medical History  
+- Logout
+
+---
+
+## 🧠 Smart Medicine Suggestion
+
+When adding a diagnosis, the doctor answers a few **yes/no side effect questions** (e.g., nausea, headache, rash).  
+The system then:
+
+- Suggests relevant medicines from `medicines.json`
+- Retrieves the correct **dosage**
+- Saves everything to the patient’s record file
+
+---
+
+## 🗂 Data Structure
+
+- `data/doctors.json` → List of doctors with specialties and availability  
+- `data/medicines.json` → Medicines with type, dosage, and side effects  
+- `data/records/<username>.json` → Patient medical history saved per visit  
+- `data/appointments.json` → Booked appointment information
+
+---
+
+## 🧪 Example Scenario
+
+1. A patient registers and books an appointment.
+2. The doctor logs in, selects the patient, and answers symptom questions.
+3. The system suggests a medicine (e.g., **Losartan**) and shows the dosage.
+4. The doctor saves the prescription.
+5. Later, the patient can view their full medical history.
+
+---
+
+## 🛠 Built With
+
+- Python 3
+- JSON files (no external database)
+- Terminal-based menus (no GUI)
+
+---
+
+## 👨‍💻 About the Project
+
+This was created during a Python Bootcamp to practice:
+
+- Real-world programming logic  
+- User input and validation  
+- File handling and structured data  
+- Role-based systems
+
+> ✅ All major features tested and fully functional.
