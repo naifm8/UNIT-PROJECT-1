@@ -11,12 +11,14 @@
 
 ---
 
-This is a beginner-friendly Python project that simulates how a small clinic operates.  
-It includes two main user roles: **Doctors** and **Patients** — each with their own menus and functions.
+This project is a command-line-based Clinic Management System developed in Python.  
+It models real-world workflows between **doctors** and **patients**, including user authentication and authorization, appointment booking, and integration with multiple JSON files.  
+This project is my way of applying what I’ve learned in previous lessons, including file handling, functions, and user interaction using Python.
 
 The system focuses on:
-- Booking appointments
-- Recommending medicines based on symptoms
+- Booking appointments  
+- Recommending doctor specialty based on symptoms  
+- Helping doctors choose the right medicine based on side effects  
 - Saving patient history with dosage and prescriptions
 
 ---
@@ -90,8 +92,8 @@ The system then:
 
 ## 🛠 Built With
 
-- Python 3
-- JSON files (no external database)
+- Python 3  
+- JSON files (no external database)  
 - Terminal-based menus (no GUI)
 
 ---
