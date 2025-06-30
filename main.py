@@ -2,8 +2,8 @@ from users.patient import register_patient, login_patient, patient_menue
 from users.doctor import login_doctor
 
 while True:
-    print("\n1. Register as Patient\n2. Login as Patient\n3. Login as a doctor")
-    choise = input("Choose (1-3): ")
+    print("\n1. Register as Patient\n2. Login as Patient\n3. Login as a doctor\n4. To exit")
+    choise = input("Choose (1-4): ")
 
     if choise == "1":
         register_patient()

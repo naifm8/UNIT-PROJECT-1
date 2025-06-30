@@ -1,1 +1,258 @@
-[]
+[
+  {
+    "name": "Paracetamol",
+    "type": "Tablet",
+    "used_for": "Fever",
+    "dosage": "500mg every 8 hours",
+    "side_effects": ["Dry mouth", "Skin rash", "Liver issues"],
+    "prescription_required": false
+  },
+  {
+    "name": "Amoxicillin",
+    "type": "Capsule",
+    "used_for": "Bacterial infections",
+    "dosage": "500mg twice daily",
+    "side_effects": ["Constipation", "Liver issues", "Dry mouth"],
+    "prescription_required": true
+  },
+  {
+    "name": "Ibuprofen",
+    "type": "Tablet",
+    "used_for": "Pain relief",
+    "dosage": "400mg every 8 hours",
+    "side_effects": ["Drowsiness", "Nausea", "Headache"],
+    "prescription_required": false
+  },
+  {
+    "name": "Cetirizine",
+    "type": "Tablet",
+    "used_for": "Allergy",
+    "dosage": "10mg once daily",
+    "side_effects": ["Skin rash", "Dry mouth", "Dizziness"],
+    "prescription_required": false
+  },
+  {
+    "name": "Metformin",
+    "type": "Tablet",
+    "used_for": "Diabetes",
+    "dosage": "500mg twice daily",
+    "side_effects": ["Nausea", "Diarrhea", "Headache"],
+    "prescription_required": true
+  },
+  {
+    "name": "Amlodipine",
+    "type": "Tablet",
+    "used_for": "Hypertension",
+    "dosage": "10mg once daily",
+    "side_effects": ["Dizziness", "Nausea", "Dry mouth"],
+    "prescription_required": true
+  },
+  {
+    "name": "Omeprazole",
+    "type": "Capsule",
+    "used_for": "Acidity",
+    "dosage": "20mg once daily",
+    "side_effects": ["Constipation", "Headache", "Dry mouth"],
+    "prescription_required": false
+  },
+  {
+    "name": "Loratadine",
+    "type": "Tablet",
+    "used_for": "Allergy",
+    "dosage": "10mg once daily",
+    "side_effects": ["Drowsiness", "Headache", "Dry mouth"],
+    "prescription_required": false
+  },
+  {
+    "name": "Azithromycin",
+    "type": "Tablet",
+    "used_for": "Bacterial infections",
+    "dosage": "500mg once daily for 3 days",
+    "side_effects": ["Nausea", "Diarrhea", "Skin rash"],
+    "prescription_required": true
+  },
+  {
+    "name": "Simvastatin",
+    "type": "Tablet",
+    "used_for": "Cholesterol control",
+    "dosage": "20mg once daily",
+    "side_effects": ["Headache", "Nausea", "Liver issues"],
+    "prescription_required": true
+  },
+  {
+    "name": "Salbutamol",
+    "type": "Inhaler",
+    "used_for": "Asthma",
+    "dosage": "100mcg as needed",
+    "side_effects": ["Increased heart rate", "Headache", "Dry mouth"],
+    "prescription_required": true
+  },
+  {
+    "name": "Clopidogrel",
+    "type": "Tablet",
+    "used_for": "Blood thinner",
+    "dosage": "75mg once daily",
+    "side_effects": ["Bleeding", "Nausea", "Dizziness"],
+    "prescription_required": true
+  },
+  {
+    "name": "Ranitidine",
+    "type": "Tablet",
+    "used_for": "Acidity",
+    "dosage": "150mg twice daily",
+    "side_effects": ["Constipation", "Headache", "Skin rash"],
+    "prescription_required": false
+  },
+  {
+    "name": "Losartan",
+    "type": "Tablet",
+    "used_for": "Hypertension",
+    "dosage": "50mg once daily",
+    "side_effects": ["Dizziness", "Headache", "Dry mouth"],
+    "prescription_required": true
+  },
+  {
+    "name": "Prednisone",
+    "type": "Tablet",
+    "used_for": "Inflammation",
+    "dosage": "10mg once daily",
+    "side_effects": ["Nausea", "Skin rash", "Headache"],
+    "prescription_required": true
+  },
+  {
+    "name": "Hydrochlorothiazide",
+    "type": "Tablet",
+    "used_for": "Hypertension",
+    "dosage": "25mg once daily",
+    "side_effects": ["Dizziness", "Constipation", "Dry mouth"],
+    "prescription_required": true
+  },
+  {
+    "name": "Diclofenac",
+    "type": "Tablet",
+    "used_for": "Arthritis",
+    "dosage": "50mg twice daily",
+    "side_effects": ["Nausea", "Drowsiness", "Liver issues"],
+    "prescription_required": true
+  },
+  {
+    "name": "Atorvastatin",
+    "type": "Tablet",
+    "used_for": "Cholesterol",
+    "dosage": "10mg once daily",
+    "side_effects": ["Liver issues", "Headache", "Constipation"],
+    "prescription_required": true
+  },
+  {
+    "name": "Levothyroxine",
+    "type": "Tablet",
+    "used_for": "Thyroid hormone",
+    "dosage": "50mcg once daily",
+    "side_effects": ["Headache", "Nausea", "Dizziness"],
+    "prescription_required": true
+  },
+  {
+    "name": "Gabapentin",
+    "type": "Capsule",
+    "used_for": "Neuropathic pain",
+    "dosage": "300mg twice daily",
+    "side_effects": ["Drowsiness", "Dizziness", "Dry mouth"],
+    "prescription_required": true
+  },
+  {
+    "name": "Pantoprazole",
+    "type": "Tablet",
+    "used_for": "Acidity",
+    "dosage": "40mg once daily",
+    "side_effects": ["Headache", "Constipation", "Nausea"],
+    "prescription_required": true
+  },
+  {
+    "name": "Alprazolam",
+    "type": "Tablet",
+    "used_for": "Anxiety",
+    "dosage": "0.5mg twice daily",
+    "side_effects": ["Drowsiness", "Dizziness", "Dry mouth"],
+    "prescription_required": true
+  },
+  {
+    "name": "Sertraline",
+    "type": "Tablet",
+    "used_for": "Depression",
+    "dosage": "50mg once daily",
+    "side_effects": ["Nausea", "Headache", "Drowsiness"],
+    "prescription_required": true
+  },
+  {
+    "name": "Fluconazole",
+    "type": "Tablet",
+    "used_for": "Fungal infections",
+    "dosage": "150mg single dose",
+    "side_effects": ["Nausea", "Dizziness", "Headache"],
+    "prescription_required": true
+  },
+  {
+    "name": "Montelukast",
+    "type": "Tablet",
+    "used_for": "Asthma",
+    "dosage": "10mg once daily",
+    "side_effects": ["Dizziness", "Headache", "Dry mouth"],
+    "prescription_required": true
+  },
+  {
+    "name": "Insulin",
+    "type": "Injection",
+    "used_for": "Diabetes",
+    "dosage": "As prescribed, varies by blood sugar level",
+    "side_effects": ["Low blood sugar", "Dizziness", "Skin rash"],
+    "prescription_required": true
+  },
+  {
+    "name": "Metoprolol",
+    "type": "Tablet",
+    "used_for": "Hypertension",
+    "dosage": "50mg twice daily",
+    "side_effects": ["Dizziness", "Fatigue", "Dry mouth"],
+    "prescription_required": true
+  },
+  {
+    "name": "Esomeprazole",
+    "type": "Capsule",
+    "used_for": "Acidity",
+    "dosage": "40mg once daily",
+    "side_effects": ["Nausea", "Headache", "Constipation"],
+    "prescription_required": false
+  },
+  {
+    "name": "Furosemide",
+    "type": "Tablet",
+    "used_for": "Edema",
+    "dosage": "40mg once daily",
+    "side_effects": ["Dizziness", "Nausea", "Dry mouth"],
+    "prescription_required": true
+  },
+  {
+    "name": "Warfarin",
+    "type": "Tablet",
+    "used_for": "Blood thinner",
+    "dosage": "5mg once daily",
+    "side_effects": ["Bleeding", "Headache", "Dizziness"],
+    "prescription_required": true
+  },
+  {
+    "name": "Diazepam",
+    "type": "Tablet",
+    "used_for": "Anxiety",
+    "dosage": "5mg twice daily",
+    "side_effects": ["Drowsiness", "Dry mouth", "Headache"],
+    "prescription_required": true
+  },
+  {
+    "name": "Naproxen",
+    "type": "Tablet",
+    "used_for": "Arthritis",
+    "dosage": "250mg twice daily",
+    "side_effects": ["Nausea", "Headache", "Drowsiness"],
+    "prescription_required": true
+  }
+]

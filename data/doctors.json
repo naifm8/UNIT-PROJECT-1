@@ -1,173 +1,173 @@
 [
-      {
-        "name": "Sarah Ahmed",
-        "specialty": "Cardiologist",
-        "available_days": ["Sunday", "Tuesday", "Thursday"]
-      },
-      {
-        "name": "Omar Al-Khalid",
-        "specialty": "Dermatologist",
-        "available_days": ["Monday", "Wednesday"]
-      },
-      {
-        "name": "Lina Hassan",
-        "specialty": "Pediatrician",
-        "available_days": ["Saturday", "Monday", "Wednesday"]
-      },
-      {
-        "name": "Faisal Al-Nasser",
-        "specialty": "Orthopedic",
-        "available_days": ["Sunday", "Tuesday", "Thursday"]
-      },
-      {
-        "name": "Rania Yousef",
-        "specialty": "Dentist",
-        "available_days": ["Monday", "Thursday"]
-      },
-      {
-        "name": "Hani Farouk",
-        "specialty": "Neurologist",
-        "available_days": ["Tuesday", "Friday"]
-      },
-      {
-        "name": "Amal Saeed",
-        "specialty": "Gynecologist",
-        "available_days": ["Sunday", "Wednesday"]
-      },
-      {
-        "name": "Yasser Mansour",
-        "specialty": "ENT",
-        "available_days": ["Monday", "Wednesday", "Friday"]
-      },
-      {
-        "name": "Nour Al-Din",
-        "specialty": "Psychiatrist",
-        "available_days": ["Sunday", "Tuesday"]
-      },
-      {
-        "name": "Reem Al-Sabah",
-        "specialty": "Ophthalmologist",
-        "available_days": ["Thursday", "Saturday"]
-      },
-      {
-        "name": "Tamer El-Gamal",
-        "specialty": "Urologist",
-        "available_days": ["Monday", "Wednesday", "Friday"]
-      },
-      {
-        "name": "Layla Hassan",
-        "specialty": "General Practitioner",
-        "available_days": ["Sunday", "Tuesday", "Thursday"]
-      },
-      {
-        "name": "Khaled Barakat",
-        "specialty": "Pulmonologist",
-        "available_days": ["Saturday", "Monday", "Wednesday"]
-      },
-      {
-        "name": "Salma Zaki",
-        "specialty": "Endocrinologist",
-        "available_days": ["Tuesday", "Friday"]
-      },
-      {
-        "name": "Nabil Al-Amin",
-        "specialty": "Oncologist",
-        "available_days": ["Sunday", "Thursday"]
-      },
-      {
-        "name": "Hana Al-Rashid",
-        "specialty": "Dermatologist",
-        "available_days": ["Monday", "Wednesday"]
-      },
-      {
-        "name": "Samir Abadi",
-        "specialty": "Cardiologist",
-        "available_days": ["Tuesday", "Friday"]
-      },
-      {
-        "name": "Dalia Tarek",
-        "specialty": "Gynecologist",
-        "available_days": ["Sunday", "Tuesday", "Thursday"]
-      },
-      {
-        "name": "Adel Farid",
-        "specialty": "Orthopedic",
-        "available_days": ["Monday", "Wednesday"]
-      },
-      {
-        "name": "Noura Kamel",
-        "specialty": "Pediatrician",
-        "available_days": ["Tuesday", "Thursday"]
-      },
-      {
-        "name": "Walid Mahran",
-        "specialty": "Psychiatrist",
-        "available_days": ["Sunday", "Wednesday", "Friday"]
-      },
-      {
-        "name": "Rana El-Masry",
-        "specialty": "Dentist",
-        "available_days": ["Saturday", "Monday"]
-      },
-      {
-        "name": "Bassam Khoury",
-        "specialty": "Neurologist",
-        "available_days": ["Tuesday", "Thursday"]
-      },
-      {
-        "name": "Lubna Qassem",
-        "specialty": "Ophthalmologist",
-        "available_days": ["Sunday", "Wednesday"]
-      },
-      {
-        "name": "Majid Fathy",
-        "specialty": "ENT",
-        "available_days": ["Monday", "Friday"]
-      },
-      {
-        "name": "Maha Saleh",
-        "specialty": "Urologist",
-        "available_days": ["Tuesday", "Thursday"]
-      },
-      {
-        "name": "Osama Harbi",
-        "specialty": "Pulmonologist",
-        "available_days": ["Saturday", "Monday", "Wednesday"]
-      },
-      {
-        "name": "Huda El-Sharif",
-        "specialty": "Endocrinologist",
-        "available_days": ["Sunday", "Tuesday"]
-      },
-      {
-        "name": "Karim Nabhan",
-        "specialty": "Oncologist",
-        "available_days": ["Monday", "Thursday"]
-      },
-      {
-        "name": "Dina Reda",
-        "specialty": "General Practitioner",
-        "available_days": ["Tuesday", "Friday"]
-      },
-      {
-        "name": "Yasmine Abdelrahman",
-        "specialty": "Gynecologist",
-        "available_days": ["Saturday", "Monday", "Wednesday"]
-      },
-      {
-        "name": "Ziad Kanaan",
-        "specialty": "Cardiologist",
-        "available_days": ["Sunday", "Thursday"]
-      },
-      {
-        "name": "Amani Khateeb",
-        "specialty": "Dermatologist",
-        "available_days": ["Tuesday", "Friday"]
-      },
-      {
-        "name": "Ahmed Jaber",
-        "specialty": "Neurologist",
-        "available_days": ["Sunday", "Wednesday"]
-      }
+  {
+    "name": "Sarah Ahmed",
+    "specialty": "Cardiologist",
+    "available_days": ["Sunday", "Tuesday", "Thursday"]
+  },
+  {
+    "name": "Omar Al-Khalid",
+    "specialty": "Dermatologist",
+    "available_days": ["Monday", "Wednesday"]
+  },
+  {
+    "name": "Lina Hassan",
+    "specialty": "Pediatrician",
+    "available_days": ["Saturday", "Monday", "Wednesday"]
+  },
+  {
+    "name": "Faisal Al-Nasser",
+    "specialty": "Orthopedic",
+    "available_days": ["Sunday", "Tuesday", "Thursday"]
+  },
+  {
+    "name": "Rania Yousef",
+    "specialty": "Dentist",
+    "available_days": ["Monday", "Thursday"]
+  },
+  {
+    "name": "Hani Farouk",
+    "specialty": "Neurologist",
+    "available_days": ["Tuesday", "Friday"]
+  },
+  {
+    "name": "Amal Saeed",
+    "specialty": "Gynecologist",
+    "available_days": ["Sunday", "Wednesday"]
+  },
+  {
+    "name": "Naif Alghamdi",
+    "password": "112233",
+    "specialty": "ENT",
+    "available_days": ["Monday", "Wednesday", "Friday"]
+  },
+  {
+    "name": "Nour Al-Din",
+    "specialty": "Psychiatrist",
+    "available_days": ["Sunday", "Tuesday"]
+  },
+  {
+    "name": "Reem Al-Sabah",
+    "specialty": "Ophthalmologist",
+    "available_days": ["Thursday", "Saturday"]
+  },
+  {
+    "name": "Tamer El-Gamal",
+    "specialty": "Urologist",
+    "available_days": ["Monday", "Wednesday", "Friday"]
+  },
+  {
+    "name": "Layla Hassan",
+    "specialty": "General Practitioner",
+    "available_days": ["Sunday", "Tuesday", "Thursday"]
+  },
+  {
+    "name": "Khaled Barakat",
+    "specialty": "Pulmonologist",
+    "available_days": ["Saturday", "Monday", "Wednesday"]
+  },
+  {
+    "name": "Salma Zaki",
+    "specialty": "Endocrinologist",
+    "available_days": ["Tuesday", "Friday"]
+  },
+  {
+    "name": "Nabil Al-Amin",
+    "specialty": "Oncologist",
+    "available_days": ["Sunday", "Thursday"]
+  },
+  {
+    "name": "Hana Al-Rashid",
+    "specialty": "Dermatologist",
+    "available_days": ["Monday", "Wednesday"]
+  },
+  {
+    "name": "Samir Abadi",
+    "specialty": "Cardiologist",
+    "available_days": ["Tuesday", "Friday"]
+  },
+  {
+    "name": "Dalia Tarek",
+    "specialty": "Gynecologist",
+    "available_days": ["Sunday", "Tuesday", "Thursday"]
+  },
+  {
+    "name": "Adel Farid",
+    "specialty": "Orthopedic",
+    "available_days": ["Monday", "Wednesday"]
+  },
+  {
+    "name": "Noura Kamel",
+    "specialty": "Pediatrician",
+    "available_days": ["Tuesday", "Thursday"]
+  },
+  {
+    "name": "Walid Mahran",
+    "specialty": "Psychiatrist",
+    "available_days": ["Sunday", "Wednesday", "Friday"]
+  },
+  {
+    "name": "Rana El-Masry",
+    "specialty": "Dentist",
+    "available_days": ["Saturday", "Monday"]
+  },
+  {
+    "name": "Bassam Khoury",
+    "specialty": "Neurologist",
+    "available_days": ["Tuesday", "Thursday"]
+  },
+  {
+    "name": "Lubna Qassem",
+    "specialty": "Ophthalmologist",
+    "available_days": ["Sunday", "Wednesday"]
+  },
+  {
+    "name": "Majid Fathy",
+    "specialty": "ENT",
+    "available_days": ["Monday", "Friday"]
+  },
+  {
+    "name": "Maha Saleh",
+    "specialty": "Urologist",
+    "available_days": ["Tuesday", "Thursday"]
+  },
+  {
+    "name": "Osama Harbi",
+    "specialty": "Pulmonologist",
+    "available_days": ["Saturday", "Monday", "Wednesday"]
+  },
+  {
+    "name": "Huda El-Sharif",
+    "specialty": "Endocrinologist",
+    "available_days": ["Sunday", "Tuesday"]
+  },
+  {
+    "name": "Karim Nabhan",
+    "specialty": "Oncologist",
+    "available_days": ["Monday", "Thursday"]
+  },
+  {
+    "name": "Dina Reda",
+    "specialty": "General Practitioner",
+    "available_days": ["Tuesday", "Friday"]
+  },
+  {
+    "name": "Yasmine Abdelrahman",
+    "specialty": "Gynecologist",
+    "available_days": ["Saturday", "Monday", "Wednesday"]
+  },
+  {
+    "name": "Ziad Kanaan",
+    "specialty": "Cardiologist",
+    "available_days": ["Sunday", "Thursday"]
+  },
+  {
+    "name": "Amani Khateeb",
+    "specialty": "Dermatologist",
+    "available_days": ["Tuesday", "Friday"]
+  },
+  {
+    "name": "Ahmed Jaber",
+    "specialty": "Neurologist",
+    "available_days": ["Sunday", "Wednesday"]
+  }
 ]
-  
