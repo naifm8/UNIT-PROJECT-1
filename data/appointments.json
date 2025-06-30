@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "appointment_id": "586dda42-8a58-4615-b5ac-4d09703dcc63",
+    "patient": "naif alghamdi",
+    "doctor": "Dina Alghamdi",
+    "day": "Friday",
+    "status": "pending"
+  }
+]

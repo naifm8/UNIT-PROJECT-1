@@ -44,7 +44,7 @@ def symptom_checker():
         if not specialties:
             specialties = ["General Physician"]
 
-    print("\n🩺 Based on your symptoms, we recommend:")
+    print("\n Based on your symptoms, we recommend:")
     for s in specialties:
         print(f" - {s}")
 

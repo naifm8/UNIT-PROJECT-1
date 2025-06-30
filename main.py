@@ -2,6 +2,7 @@ from users.patient import register_patient, login_patient, patient_menue
 from users.doctor import login_doctor
 
 while True:
+    print("\n==== MAIN MENU ====")
     print("\n1. Register as Patient\n2. Login as Patient\n3. Login as a doctor\n4. To exit")
     choise = input("Choose (1-4): ")
 

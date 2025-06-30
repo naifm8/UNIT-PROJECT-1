@@ -11,8 +11,8 @@ def patient_menue(patient):
         print("==== PATIENT MENU ====\n")
         print("1. View Available Doctors")
         print("2. Book Appointment")
-        print("3. Cancel Appointments")
-        print("4. View My Appointments")
+        print("3. View My Appointments")
+        print("4. Cancel Appointments")
         print("5. View My Medical History")
         print("6. Logout")
 
@@ -23,15 +23,15 @@ def patient_menue(patient):
             specialties = symptom_checker.symptom_checker()
             book_appointment(patient["full_name"], specialties)
         elif choice == "3":
-            cancel_appointment(patient["full_name"])
-        elif choice == "4":
             view_my_appointments(patient["full_name"])
+        elif choice == "4":
+            cancel_appointment(patient["full_name"])
         elif choice == "5":
             view_medical_history(patient["full_name"])
         elif choice == "6":
-            exit()
+            return
         else:
-            print("Invalid input, choose: 1-7")
+            print("Invalid input, choose: 1-6")
 
     
 
