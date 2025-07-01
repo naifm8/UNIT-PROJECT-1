@@ -1,23 +1,9 @@
 [
   {
-    "appointment_id": "9a2a8c1f-5090-4a01-b2e1-d532c63676d8",
+    "appointment_id": "cd6b40f0-4dad-4e6a-8036-4a405aa026fe",
     "patient": "naif alghamdi",
-    "doctor": "Tariq Alghamdi",
-    "day": "Sunday",
-    "status": "pending"
-  },
-  {
-    "appointment_id": "1c185f7b-780c-49b4-8b52-9e8969904bbd",
-    "patient": "naif alghamdi",
-    "doctor": "Dina Alghamdi",
+    "doctor": "Aisha Kim",
     "day": "Friday",
-    "status": "pending"
-  },
-  {
-    "appointment_id": "93e8fac1-8336-4829-8ca8-deb616372e9e",
-    "patient": "naif alghamdi",
-    "doctor": "Dina Alghamdi",
-    "day": "Thursday",
     "status": "pending"
   }
 ]

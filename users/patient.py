@@ -18,8 +18,7 @@ def patient_menue(patient):
     print(Fore.CYAN + "=" * 60)
 
     while True:
-        print(Fore.GREEN + f"\n{'PATIENT MENU':^50}")
-        print("\n")
+        print(Fore.GREEN + f"\n{'PATIENT MENU':^50}\n")
         print(Fore.YELLOW + "1. 🩺  View Available Doctors")
         print(Fore.YELLOW + "2. 📅  Book Appointment")
         print(Fore.YELLOW + "3. 📖  View My Appointments")
@@ -189,33 +188,42 @@ def login_patient():
 def book_appointment(patient_name, specialties=None):
     doctors = load_json('data/doctors.json')
     if not doctors:
-        print(" No doctors available at the moment.")
+        print(Fore.LIGHTRED_EX +" No doctors available at the moment.")
         return
 
     # Filter doctors based on specialties
     if specialties:
         doctors = [d for d in doctors if d['specialty'] in specialties]
-
     if not doctors:
-        print(" No doctors available for the selected specialties.")
-        return
+        print(Fore.RED + "No doctors to recommend.")
+    else:
+        print(Fore.LIGHTGREEN_EX + "\nThese doctors are recommended:\n")
 
-    print("\n These doctors are recommended:")
-    for i, doc in enumerate(doctors, 1):
-        print(f"{i}. {doc['name']} - {doc['specialty']} (Available: {', '.join(doc['available_days'])})")
+        table_data = []
+        for i, doc in enumerate(doctors, 1):
+            table_data.append([
+                i,
+                doc["name"],
+                doc["specialty"],
+                ", ".join(doc["available_days"])
+                  ])
+
+        headers = ["#", "Name", "Specialty", "Available Days"]
+        print(Fore.LIGHTWHITE_EX + tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
+
 
     # Choose doctor
     while True:
         doctor_name = input("Enter the name of the doctor you want to book: ").strip()
         if not doctor_name:
-            print(" Doctor name can't be empty.")
+            print(Fore.LIGHTRED_EX +" Doctor name can't be empty.")
             continue
         def normalize_name(name):
             return name.replace("-", " ").replace("_", " ").lower().strip()
         doctor = next((d for d in doctors if normalize_name(d['name']) == normalize_name(doctor_name)),None)
         if doctor:
             break
-        print(" Doctor not found. Please try again.")
+        print(Fore.LIGHTRED_EX +" Doctor not found. Please try again.")
 
     # Choose day
     available_days = [d.lower() for d in doctor.get('available_days', [])]
@@ -223,12 +231,12 @@ def book_appointment(patient_name, specialties=None):
     while True:
         day = input("Enter the day you want to book: ").strip()
         if not day:
-            print(" Day can't be empty.")
+            print(Fore.LIGHTRED_EX +" Day can't be empty.")
             continue
 
         if day.lower() in available_days:
             break
-        print(f" Doctor is not available on {day}. Available: {', '.join(doctor.get('available_days', []))}")
+        print(Fore.LIGHTRED_EX +f" Doctor is not available on {day}. Available: {', '.join(doctor.get('available_days', []))}")
 
     # Save appointment
     import uuid
@@ -257,7 +265,7 @@ def view_my_appointments(patient_name):
     print(Fore.LIGHTCYAN_EX + "-" * 30 + "\n")
 
     if not my_appointments:
-        print("You have no appointments yet")
+        print(Fore.LIGHTYELLOW_EX +"You have no appointments yet")
         return
     
     table_data = []
@@ -274,7 +282,7 @@ def view_my_appointments(patient_name):
     headers = ["#", "Doctor", "Day", "Status", "Appointment ID"]
 
     # Print the table with color
-    print(Fore.LIGHTGREEN_EX + tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
+    print(Fore.LIGHTCYAN_EX +  tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
     
     #for i, app in enumerate(my_appointments, 1):
     #    print(Fore.LIGHTGREEN_EX +f"\n{i}. Doctor: {app['doctor']} | Day: {app['day']} | Status: {app['status']} | ID: {app['appointment_id']}")
@@ -284,28 +292,39 @@ def cancel_appointment(patient_name):
     my_appointments = [a for a in appointments if a["patient"].lower() == patient_name.lower()]
 
     if not my_appointments:
-        print("\nYou have no appointments to cancel")
+        print(Fore.LIGHTRED_EX +"\nYou have no appointments to cancel")
         return
     print(Fore.LIGHTCYAN_EX + "\n" + "-" * 30)
     print(Fore.LIGHTWHITE_EX + f"{'==== Your Appointments ====':^30}")
     print(Fore.LIGHTCYAN_EX + "-" * 30 + "\n")
 
-    for a in my_appointments:
-        print(Fore.LIGHTGREEN_EX +f"- ID: {a['appointment_id']} | Doctor: {a['doctor']} | Day: {a['day']} | Status: {a['status']}")
+    table_data = []
+    for i, app in enumerate(my_appointments, 1):
+        table_data.append([
+            i,
+            app["doctor"],
+            app["day"],
+            app["status"],
+            app["appointment_id"]
+        ])
+
+    headers = ["#", "Doctor", "Day", "Status", "Appointment ID"]
+
+    print(Fore.LIGHTCYAN_EX + tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
     
     while True:
         appointment_id = input("\nEnter the Appointment ID you want to cancel (or '0' to go back): ").strip()
         if appointment_id == "0":
             return
         if not appointment_id:
-            print(" Appointment ID cannot be empty.")
+            print(Fore.LIGHTRED_EX +" Appointment ID cannot be empty.")
             continue
 
         # Find matching appointment
         match = next((a for a in appointments if a["appointment_id"] == appointment_id and a["patient"].lower() == patient_name.lower()), None)
 
         if not match:
-            print(" No appointment found with that ID for your account.")
+            print(Fore.LIGHTRED_EX +" No appointment found with that ID for your account.")
             continue
 
         appointments.remove(match)
@@ -317,7 +336,7 @@ def view_medical_history(paitent_name):
     record_file = f"data/records/{paitent_name}.json"
 
     if not os.path.exists(record_file):
-        print("\n You have no medical history yet.")
+        print(Fore.LIGHTYELLOW_EX + "\n You have no medical history yet.")
         return
     
     records = load_json(record_file)

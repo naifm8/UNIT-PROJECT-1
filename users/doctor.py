@@ -2,10 +2,15 @@ from utils.file_handler import load_json, save_json
 from utils.helpers import ask_side_effects, suggest_medicine_from_side_effects, get_dosage_by_medicine_name
 import datetime
 import os
+from colorama import Fore
+from tabulate import tabulate
+from colorama import Fore
 
 def doctor_menu(doctor):
+    print(Fore.LIGHTCYAN_EX + "\n" + "-" * 37)
+    print(Fore.LIGHTWHITE_EX + f"{"==== DR.({doctor['name']}) PANEL ====":^30}")
+    print(Fore.LIGHTCYAN_EX + "-" * 37 + "\n")
     while True:
-        print(f"\n==== DOCTOR PANEL DR.({doctor['name']}) ====")
         print("1. View My Appointments")
         print("2. Add Diagnosis & Prescription")
         print("3. View Patient Medical History")
@@ -53,12 +58,22 @@ def view_doctor_appointments(doctor_name):
 
     print(f"\n==== {doctor_name}'s Appointments ====")
     if not my_appointments:
-        print("No appointments today.")
+        print(Fore.RED + "\nNo appointments today.")
         return
-
+    
+    table_data = []
     for i, app in enumerate(my_appointments, 1):
-        print(f"{i}. Patient: {app['patient']} | Status: {app['status']} | Day: {app['day']} | ID: {app['appointment_id']}")
+        table_data.append([
+            i,
+            app["patient"],
+            app["status"],
+            app["day"],
+            app["appointment_id"]
+        ])
 
+    headers = ["#", "Patient", "Status", "Day", "Appointment ID"]
+
+    print(Fore.LIGHTCYAN_EX + tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
 '''
 def suggest_medicine_from_diagnosis(diagnosis):
     diagnosis_words = diagnosis.lower().split()
@@ -74,32 +89,35 @@ def suggest_medicine_from_diagnosis(diagnosis):
 '''
 
 def add_diagnosis_and_prescription(doctor_name):
-    print("\n==== Add Prescription Based on Side Effects ====")
+    print(Fore.LIGHTCYAN_EX + "\n" + "-" * 48)
+    print(Fore.LIGHTWHITE_EX + f"{"==== Add Prescription Based on Side Effects ====":^30}")
+    print(Fore.LIGHTCYAN_EX + "-" * 48 + "\n")
 
-    patient = input("Enter patient full name: ").strip().lower()
+    patient = input("\nEnter patient full name: ").strip().lower()
     if not patient:
-        print(" Patient username is required.")
+        print(Fore.RED +" Patient username is required.")
         return
 
     #using helper.py function for side effects
     effects = ask_side_effects()
     if not effects:
-        print(" No side effects selected. Cannot continue.")
+        print(Fore.RED +" No side effects selected. Cannot continue.")
         return
 
     #suggest medicine based on side effects
     suggestions = suggest_medicine_from_side_effects(effects)
     if suggestions:
-        print("\n Suggested medicines based on side effects:")
-        for med in suggestions:
-            print(f" - {med}")
+        print(Fore.LIGHTCYAN_EX + "\nSuggested medicines based on side effects:")
+        table_data = [[i + 1, med] for i, med in enumerate(suggestions)]
+        headers = ["#", "Medicine"]
+        print(Fore.LIGHTGREEN_EX + tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
     else:
-        print(" No medicines found for the reported side effects.")
+        print(Fore.RED + "No medicines found for the reported side effects.")
 
     # Let doctor to leave a note
     prescription = input("\nEnter prescription (or leave a note): ").strip()
     if not prescription:
-        print(" Prescription cannot be empty.")
+        print(Fore.RED + " Prescription cannot be empty.")
         return
     
     #use the helper.py method to get the medicine dosage
@@ -121,10 +139,12 @@ def add_diagnosis_and_prescription(doctor_name):
 
     records.append(entry)
     save_json(record_file, records)
-    print(f"\n Prescription saved to {patient}'s record.")
+    print(Fore.LIGHTGREEN_EX + f"\n Prescription saved to {patient}'s record.")
 
 def view_patient_history():
-    print("\n==== VIEW PATIENT MEDICAL HISTORY ====\n")
+    print(Fore.LIGHTCYAN_EX + "\n" + "-" * 39)
+    print(Fore.LIGHTWHITE_EX + f"{"==== VIEW PATIENT MEDICAL HISTORY ====":^30}")
+    print(Fore.LIGHTCYAN_EX + "-" * 39 + "\n")
     username = input("Enter the patient full name: ").strip().lower()
 
     clean_name = username.replace(" ", "").lower()
@@ -137,14 +157,23 @@ def view_patient_history():
     history = load_json(filepath)
 
     if not history:
-        print(" No medical records yet for this patient.")
+        print(Fore.YELLOW + "No medical records yet for this patient.")
         return
-    
-    print(f" Medical history for {username}")
+
+    print(Fore.LIGHTCYAN_EX + f"\nMedical history for {username.capitalize()}\n")
+
+    table_data = []
     for i, record in enumerate(history, 1):
-        print(f"\nRecord #{i}")
-        print(f"Date: {record.get('date', 'N/A')}")
-        print(f"Doctor: {record.get('doctor', '-')}")
-        print(f"Diagnosis: {record.get('diagnosis', '-')}")
-        print(f"Prescription: {record.get('prescription', '-')}")
+        table_data.append([
+            i,
+            record.get("date", "N/A"),
+            record.get("doctor", "-"),
+            record.get("diagnosis", "-"),
+            record.get("prescription", "-")
+        ])
+
+    headers = ["#", "Date", "Doctor", "Diagnosis", "Prescription"]
+
+    print(tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
+    print('\n')
 

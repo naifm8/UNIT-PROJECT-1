@@ -26,7 +26,7 @@ def symptom_checker():
 
     specialties = []
 
-    # Priority combos
+  
     if fever == "yes" and skin == "yes":
         specialties = ["Dermatologist"]
     elif chest == "yes" and headache == "yes":
@@ -34,7 +34,6 @@ def symptom_checker():
     elif stomach == "yes" and fever == "yes":
         specialties = ["Gastroenterologist"]
 
-    # Fallback
     if not specialties:
         if skin == "yes":
             specialties.append("Dermatologist")
@@ -49,8 +48,8 @@ def symptom_checker():
         if not specialties:
             specialties = ["General Physician"]
 
-    print("\n Based on your symptoms, we recommend:")
+    print("\n Based on your symptoms, we recommend:\n")
     for s in specialties:
-        print(f" - {s}")
+        print(Fore.LIGHTYELLOW_EX + f" - {s}")
 
     return specialties

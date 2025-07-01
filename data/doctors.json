@@ -1,242 +1,182 @@
 [
   {
-    "name": "Dina Alghamdi",
-    "password": "vDqhYVeG",
+    "name": "Noah Patel",
+    "password": "rrP8bbZ8",
+    "specialty": "Orthopedic",
+    "available_days": ["Friday", "Tuesday", "Monday"]
+  },
+  {
+    "name": "Aisha Kim",
+    "password": "GfRrnKqM",
     "specialty": "Dermatologist",
-    "available_days": ["Thursday", "Friday", "Saturday"]
+    "available_days": ["Saturday", "Monday", "Friday"]
   },
   {
-    "name": "Maya Aldosari",
-    "password": "beNE6J1X",
-    "specialty": "Endocrinologist",
-    "available_days": ["Friday", "Monday", "Tuesday"]
-  },
-  {
-    "name": "Salem Alotaibi",
-    "password": "vxiq9KpM",
-    "specialty": "Orthopedic",
-    "available_days": ["Wednesday", "Tuesday", "Thursday"]
-  },
-  {
-    "name": "Tariq Alotaibi",
-    "password": "OzHokX90",
-    "specialty": "Pulmonologist",
-    "available_days": ["Tuesday", "Friday", "Monday"]
-  },
-  {
-    "name": "Maya Almutairi",
-    "password": "8RDtFw6B",
-    "specialty": "ENT",
-    "available_days": ["Tuesday", "Wednesday", "Thursday"]
-  },
-  {
-    "name": "Maya Alshehri",
-    "password": "YuJFpRq5",
-    "specialty": "Cardiologist",
-    "available_days": ["Wednesday", "Thursday", "Sunday"]
-  },
-  {
-    "name": "Fahad Alotaibi",
-    "password": "PG7g4OGv",
-    "specialty": "Orthopedic",
-    "available_days": ["Friday", "Tuesday", "Saturday"]
-  },
-  {
-    "name": "Reem Almutairi",
-    "password": "LKOWooJd",
+    "name": "Noura Clark",
+    "password": "NIUH2ssn",
     "specialty": "Ophthalmologist",
-    "available_days": ["Monday", "Wednesday", "Tuesday"]
+    "available_days": ["Wednesday", "Sunday", "Tuesday"]
   },
   {
-    "name": "Jana Alshammari",
-    "password": "FfJ6zpbi",
-    "specialty": "Gynecologist",
-    "available_days": ["Tuesday", "Friday", "Saturday"]
-  },
-  {
-    "name": "Khaled Almalki",
-    "password": "YPUqRtLp",
-    "specialty": "Dentist",
-    "available_days": ["Wednesday", "Saturday", "Friday"]
-  },
-  {
-    "name": "Reem Alzahrani",
-    "password": "LhZdsJaZ",
-    "specialty": "Dermatologist",
-    "available_days": ["Friday", "Wednesday", "Saturday"]
-  },
-  {
-    "name": "Rania Alharbi",
-    "password": "7aRYopLZ",
+    "name": "James Anderson",
+    "password": "XLhhlaBm",
     "specialty": "Oncologist",
-    "available_days": ["Monday", "Sunday", "Friday"]
+    "available_days": ["Thursday", "Monday", "Saturday"]
   },
   {
-    "name": "Lina Alshehri",
-    "password": "ywmVWtTg",
-    "specialty": "Pulmonologist",
-    "available_days": ["Friday", "Monday", "Saturday"]
+    "name": "Ethan Lopez",
+    "password": "4dcYveYG",
+    "specialty": "ENT",
+    "available_days": ["Monday", "Thursday", "Saturday"]
   },
   {
-    "name": "Jana Alharbi",
-    "password": "VLWi4hPt",
-    "specialty": "General Physician",
-    "available_days": ["Thursday", "Saturday", "Wednesday"]
-  },
-  {
-    "name": "Maya Alenzi",
-    "password": "ye7JTfKh",
-    "specialty": "Pediatrician",
-    "available_days": ["Wednesday", "Thursday", "Tuesday"]
-  },
-  {
-    "name": "Tariq Alghamdi",
-    "password": "UlXqBdDB",
-    "specialty": "Dermatologist",
-    "available_days": ["Monday", "Sunday", "Saturday"]
-  },
-  {
-    "name": "Salem Alenzi",
-    "password": "3pmBQwL3",
-    "specialty": "General Physician",
-    "available_days": ["Wednesday", "Thursday", "Friday"]
-  },
-  {
-    "name": "Tariq Aldosari",
-    "password": "FHsDnS1w",
-    "specialty": "Pulmonologist",
-    "available_days": ["Tuesday", "Sunday", "Monday"]
-  },
-  {
-    "name": "Ali Alharbi",
-    "password": "aXGzNj8f",
+    "name": "Sara Johnson",
+    "password": "UBichBqX",
     "specialty": "Gastroenterologist",
-    "available_days": ["Thursday", "Sunday", "Tuesday"]
+    "available_days": ["Wednesday", "Monday", "Sunday"]
   },
   {
-    "name": "Khaled Alenzi",
-    "password": "3iBJJycO",
-    "specialty": "Pulmonologist",
-    "available_days": ["Friday", "Wednesday", "Sunday"]
-  },
-  {
-    "name": "Yousef Alenzi",
-    "password": "tFRQ63cd",
+    "name": "Omar Moore",
+    "password": "7JWXgovW",
     "specialty": "Cardiologist",
-    "available_days": ["Saturday", "Tuesday", "Wednesday"]
+    "available_days": ["Saturday", "Wednesday", "Tuesday"]
   },
   {
-    "name": "Amira Alzahrani",
-    "password": "h2cLNIl0",
+    "name": "Noah Garcia",
+    "password": "LtbDdu2j",
     "specialty": "Ophthalmologist",
-    "available_days": ["Monday", "Friday", "Tuesday"]
-  },
-  {
-    "name": "Noura Almutairi",
-    "password": "08mSdc2P",
-    "specialty": "Psychiatrist",
-    "available_days": ["Tuesday", "Saturday", "Monday"]
-  },
-  {
-    "name": "Dina Alotaibi",
-    "password": "PVlzRNN6",
-    "specialty": "Psychiatrist",
-    "available_days": ["Saturday", "Tuesday", "Wednesday"]
-  },
-  {
-    "name": "Hassan Alzahrani",
-    "password": "EBruDJT1",
-    "specialty": "Dentist",
-    "available_days": ["Sunday", "Saturday", "Wednesday"]
-  },
-  {
-    "name": "Noura Alotaibi",
-    "password": "yEh3cvWy",
-    "specialty": "Dentist",
-    "available_days": ["Thursday", "Friday", "Saturday"]
-  },
-  {
-    "name": "Ali Alotaibi",
-    "password": "8bxsUqPD",
-    "specialty": "Cardiologist",
-    "available_days": ["Friday", "Saturday", "Sunday"]
-  },
-  {
-    "name": "Mohammed Alzahrani",
-    "password": "Fjit2QNf",
-    "specialty": "General Physician",
-    "available_days": ["Sunday", "Wednesday", "Saturday"]
-  },
-  {
-    "name": "Noura Alzahrani",
-    "password": "iJnZRK2d",
-    "specialty": "Gynecologist",
-    "available_days": ["Friday", "Monday", "Saturday"]
-  },
-  {
-    "name": "Yousef Alshammari",
-    "password": "EkxNF6LI",
-    "specialty": "Neurologist",
-    "available_days": ["Wednesday", "Monday", "Saturday"]
-  },
-  {
-    "name": "Maya Alshammari",
-    "password": "qYIO9fXh",
-    "specialty": "Gynecologist",
     "available_days": ["Saturday", "Friday", "Thursday"]
   },
   {
-    "name": "Abdullah Alshammari",
-    "password": "sn3JwuhG",
-    "specialty": "Dentist",
-    "available_days": ["Thursday", "Saturday", "Monday"]
+    "name": "Lucas Davis",
+    "password": "7A2OkMKK",
+    "specialty": "ENT",
+    "available_days": ["Monday", "Thursday", "Friday"]
   },
   {
-    "name": "Reem Alharbi",
-    "password": "cWhjnnly",
-    "specialty": "Pediatrician",
-    "available_days": ["Tuesday", "Wednesday", "Monday"]
-  },
-  {
-    "name": "Salem Almutairi",
-    "password": "Lq8BEWoa",
-    "specialty": "Neurologist",
-    "available_days": ["Sunday", "Thursday", "Saturday"]
-  },
-  {
-    "name": "Amira Alshehri",
-    "password": "YWhOr7w0",
-    "specialty": "Cardiologist",
-    "available_days": ["Friday", "Saturday", "Tuesday"]
-  },
-  {
-    "name": "Abdullah Alghamdi",
-    "password": "Push7oUD",
-    "specialty": "Pediatrician",
-    "available_days": ["Sunday", "Tuesday", "Wednesday"]
-  },
-  {
-    "name": "Amira Almutairi",
-    "password": "EWjHzmp2",
-    "specialty": "Orthopedic",
-    "available_days": ["Monday", "Wednesday", "Sunday"]
-  },
-  {
-    "name": "Dina Alshehri",
-    "password": "GgzWyDzr",
-    "specialty": "Pulmonologist",
-    "available_days": ["Sunday", "Wednesday", "Saturday"]
-  },
-  {
-    "name": "Mohammed Alenzi",
-    "password": "5ZIfx7LI",
-    "specialty": "Gynecologist",
-    "available_days": ["Tuesday", "Friday", "Wednesday"]
-  },
-  {
-    "name": "Bassam Alharbi",
-    "password": "orGoP9bN",
+    "name": "Chloe Patel",
+    "password": "KPnGkrAj",
     "specialty": "Oncologist",
+    "available_days": ["Thursday", "Saturday", "Tuesday"]
+  },
+  {
+    "name": "Fatima Nguyen",
+    "password": "iYHx1QjB",
+    "specialty": "General Physician",
+    "available_days": ["Tuesday", "Wednesday", "Sunday"]
+  },
+  {
+    "name": "Noah Moore",
+    "password": "V8sJJ6gC",
+    "specialty": "Dentist",
+    "available_days": ["Friday", "Saturday", "Sunday"]
+  },
+  {
+    "name": "Zain Smith",
+    "password": "Brfhwa1g",
+    "specialty": "Dermatologist",
+    "available_days": ["Friday", "Thursday", "Wednesday"]
+  },
+  {
+    "name": "Lucas Lee",
+    "password": "sdiKVyLb",
+    "specialty": "Orthopedic",
+    "available_days": ["Thursday", "Friday", "Tuesday"]
+  },
+  {
+    "name": "Liam Lopez",
+    "password": "GT9FVZKo",
+    "specialty": "ENT",
+    "available_days": ["Monday", "Friday", "Sunday"]
+  },
+  {
+    "name": "Sara Garcia",
+    "password": "xfBGQSDF",
+    "specialty": "Cardiologist",
+    "available_days": ["Friday", "Tuesday", "Saturday"]
+  },
+  {
+    "name": "Noura Patel",
+    "password": "fsUUG7rE",
+    "specialty": "Dentist",
+    "available_days": ["Tuesday", "Thursday", "Wednesday"]
+  },
+  {
+    "name": "Chloe Khan",
+    "password": "ZAuP5zT2",
+    "specialty": "ENT",
+    "available_days": ["Sunday", "Friday", "Tuesday"]
+  },
+  {
+    "name": "James Hussein",
+    "password": "aRLO5scJ",
+    "specialty": "Pediatrician",
+    "available_days": ["Sunday", "Thursday", "Friday"]
+  },
+  {
+    "name": "Liam Garcia",
+    "password": "HCfbJ9xA",
+    "specialty": "Gynecologist",
+    "available_days": ["Tuesday", "Sunday", "Monday"]
+  },
+  {
+    "name": "Aisha Johnson",
+    "password": "QAjgaKLo",
+    "specialty": "Oncologist",
+    "available_days": ["Saturday", "Thursday", "Wednesday"]
+  },
+  {
+    "name": "James Martinez",
+    "password": "t646aRaR",
+    "specialty": "Gynecologist",
+    "available_days": ["Saturday", "Sunday", "Wednesday"]
+  },
+  {
+    "name": "Omar Miller",
+    "password": "EUGM2paD",
+    "specialty": "Dermatologist",
+    "available_days": ["Friday", "Monday", "Thursday"]
+  },
+  {
+    "name": "Hassan Hussein",
+    "password": "8B3rpTe1",
+    "specialty": "Dentist",
+    "available_days": ["Monday", "Saturday", "Tuesday"]
+  },
+  {
+    "name": "Sara Nguyen",
+    "password": "C6UucVIn",
+    "specialty": "Pulmonologist",
+    "available_days": ["Thursday", "Tuesday", "Friday"]
+  },
+  {
+    "name": "Ethan Brown",
+    "password": "AU8IAdJ0",
+    "specialty": "Neurologist",
+    "available_days": ["Monday", "Sunday", "Saturday"]
+  },
+  {
+    "name": "Aisha Martinez",
+    "password": "0D2OQtx6",
+    "specialty": "Psychiatrist",
+    "available_days": ["Monday", "Saturday", "Wednesday"]
+  },
+  {
+    "name": "Noura Kim",
+    "password": "yLheW22G",
+    "specialty": "ENT",
+    "available_days": ["Saturday", "Thursday", "Monday"]
+  },
+  {
+    "name": "Ali Nguyen",
+    "password": "f2lQdfzt",
+    "specialty": "Neurologist",
     "available_days": ["Wednesday", "Sunday", "Thursday"]
+  },
+  {
+    "name": "Emma Smith",
+    "password": "5xeXvRDd",
+    "specialty": "Orthopedic",
+    "available_days": ["Monday", "Tuesday", "Saturday"]
   }
 ]

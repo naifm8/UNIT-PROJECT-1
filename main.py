@@ -1,7 +1,5 @@
 from users.patient import register_patient, login_patient, patient_menue
 from users.doctor import login_doctor
-
-
 from colorama import Fore, Style, init
 from art import tprint
 
@@ -10,7 +8,7 @@ init(autoreset=True)
 while True:
     print("\n")
     print(Fore.LIGHTCYAN_EX + "=" * 70)
-    tprint("Clinic System", font="standard")  # Clean and not too heavy
+    tprint("Clinic   System", font="standard")  
     print(Fore.LIGHTGREEN_EX + f"{'MAIN MENU':^70}")
     print(Fore.LIGHTCYAN_EX + "=" * 70)
 
