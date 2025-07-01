@@ -1,9 +1,14 @@
 from utils.file_handler import load_json
+from colorama import Fore
+from art import tprint
+
 
 DOCTORS_FILE = "data/doctors.json"
 
 def symptom_checker():
-    print("\n--- Symptom Checker ---")
+    print(Fore.LIGHTCYAN_EX + "\n" + "-" * 30)
+    print(Fore.LIGHTWHITE_EX + f"{'Symptom Checker':^30}")
+    print(Fore.LIGHTCYAN_EX + "-" * 30 + "\n")
 
     def ask_yes_no(q):
         while True:

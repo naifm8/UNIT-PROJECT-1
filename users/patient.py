@@ -4,17 +4,29 @@ import symptom_checker
 import re
 import uuid
 import os
+from colorama import Fore, Style, init
+from art import tprint
+from tabulate import tabulate
+from colorama import Fore
+
+init(autoreset=True)  
 
 def patient_menue(patient):
+        
+    print("\n" + Fore.CYAN + "=" * 60)
+    tprint("Welcome!", font="stander") 
+    print(Fore.CYAN + "=" * 60)
+
     while True:
-        print("\n   ==== WELCOM! ====   ")
-        print("==== PATIENT MENU ====\n")
-        print("1. View Available Doctors")
-        print("2. Book Appointment")
-        print("3. View My Appointments")
-        print("4. Cancel Appointments")
-        print("5. View My Medical History")
-        print("6. Logout")
+        print(Fore.GREEN + f"\n{'PATIENT MENU':^50}")
+        print("\n")
+        print(Fore.YELLOW + "1. 🩺  View Available Doctors")
+        print(Fore.YELLOW + "2. 📅  Book Appointment")
+        print(Fore.YELLOW + "3. 📖  View My Appointments")
+        print(Fore.YELLOW + "4. ❌  Cancel Appointments")
+        print(Fore.YELLOW + "5. 🗂️   View My Medical History")
+        print(Fore.RED +    "6. 🔒  Logout")
+        print(Fore.CYAN + "=" * 60)
 
         choice = input("Choose an option (1-6): ").strip()
         if choice == "1":
@@ -36,7 +48,9 @@ def patient_menue(patient):
     
 
 def register_patient():
-    print("\n==== PATIENT REGISTRATION ====\n")
+    print(Fore.LIGHTCYAN_EX + "\n" + "-" * 30)
+    print(Fore.LIGHTWHITE_EX + f"{"==== PATIENT REGISTRATION ====":^30}")
+    print(Fore.LIGHTCYAN_EX + "-" * 30 + "\n")
     patients = load_json('data/patients.json')
 
     #To validate username
@@ -61,6 +75,7 @@ def register_patient():
                continue
            if any(char.isdigit() for char in full_name):
                print("Full name can't contain numbers.")
+               continue
            break
     
     #To validate email address
@@ -137,10 +152,12 @@ def register_patient():
     #Appending the new registerd patient into the .json file
     patients.append(new_patient)
     save_json('data/patients.json', patients)
-    print("Registered successfully!")
+    print(Fore.LIGHTGREEN_EX +"Registered successfully!")
 
 def login_patient():
-    print("\n==== PATIENT LOGIN ====\n")
+    print(Fore.LIGHTCYAN_EX + "\n" + "-" * 30)
+    print(Fore.LIGHTWHITE_EX + f"{"==== PATIENT LOGIN ====":^30}")
+    print(Fore.LIGHTCYAN_EX + "-" * 30 + "\n")
     patients = load_json('data/patients.json')
     if not patients:
         print("No registerd patients found.")
@@ -162,7 +179,7 @@ def login_patient():
         if matched_user is None or matched_user['password'] != password:
                 print("Username not found or incorrect password")
         else:
-                print(f"Welcome {matched_user['full_name']}!")
+                print(Fore.LIGHTGREEN_EX +f"Welcome {matched_user['full_name']}!")
                 return matched_user
     
     print("Too many failed attempts. returning to menu")
@@ -229,20 +246,38 @@ def book_appointment(patient_name, specialties=None):
     appointments.append(appointment)
     save_json("data/appointments.json", appointments)
 
-    print(f"\n Appointment booked with {doctor['name']} on {day.capitalize()}.")
+    print(Fore.LIGHTGREEN_EX +f"\n Appointment booked with {doctor['name']} on {day.capitalize()}.\n")
 
 def view_my_appointments(patient_name):
     appointments = load_json("data/appointments.json")
 
     my_appointments = [a for a in appointments if a['patient'].lower() == patient_name.lower()]
+    print(Fore.LIGHTCYAN_EX + "\n" + "-" * 30)
+    print(Fore.LIGHTWHITE_EX + f"{'==== My Appointments ====':^30}")
+    print(Fore.LIGHTCYAN_EX + "-" * 30 + "\n")
 
-    print('\n==== My Appointments ====')
     if not my_appointments:
         print("You have no appointments yet")
         return
     
+    table_data = []
     for i, app in enumerate(my_appointments, 1):
-        print(f"\n{i}. Doctor: {app['doctor']} | Day: {app['day']} | Status: {app['status']} | ID: {app['appointment_id']}")
+        table_data.append([
+          i,
+          app["doctor"],
+          app["day"],
+          app["status"],
+          app["appointment_id"]
+        ])
+
+    # Define headers
+    headers = ["#", "Doctor", "Day", "Status", "Appointment ID"]
+
+    # Print the table with color
+    print(Fore.LIGHTGREEN_EX + tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
+    
+    #for i, app in enumerate(my_appointments, 1):
+    #    print(Fore.LIGHTGREEN_EX +f"\n{i}. Doctor: {app['doctor']} | Day: {app['day']} | Status: {app['status']} | ID: {app['appointment_id']}")
 
 def cancel_appointment(patient_name):
     appointments = load_json("data/appointments.json")
@@ -251,10 +286,12 @@ def cancel_appointment(patient_name):
     if not my_appointments:
         print("\nYou have no appointments to cancel")
         return
-    
-    print("\n==== Your Appointments ====")
+    print(Fore.LIGHTCYAN_EX + "\n" + "-" * 30)
+    print(Fore.LIGHTWHITE_EX + f"{'==== Your Appointments ====':^30}")
+    print(Fore.LIGHTCYAN_EX + "-" * 30 + "\n")
+
     for a in my_appointments:
-        print(f"- ID: {a['appointment_id']} | Doctor: {a['doctor']} | Day: {a['day']} | Status: {a['status']}")
+        print(Fore.LIGHTGREEN_EX +f"- ID: {a['appointment_id']} | Doctor: {a['doctor']} | Day: {a['day']} | Status: {a['status']}")
     
     while True:
         appointment_id = input("\nEnter the Appointment ID you want to cancel (or '0' to go back): ").strip()
@@ -273,7 +310,7 @@ def cancel_appointment(patient_name):
 
         appointments.remove(match)
         save_json("data/appointments.json", appointments)
-        print(" \nAppointment canceled successfully.")
+        print(Fore.LIGHTGREEN_EX + " \nAppointment canceled successfully.")
         break
 
 def view_medical_history(paitent_name):
@@ -288,8 +325,9 @@ def view_medical_history(paitent_name):
     if not records:
         print("\n Your medical history is empty.")
         return
-    
-    print("\n==== YOUR MEDICAL HISTORY ====")
+    print(Fore.LIGHTCYAN_EX + "\n" + "-" * 30)
+    print(Fore.LIGHTWHITE_EX + f"{'==== YOUR MEDICAL HISTORY ====':^30}")
+    print(Fore.LIGHTCYAN_EX + "-" * 30 + "\n")
     for i, record in enumerate(records, 1):
         print(f"\n{i}. Date: {record['date']}")
         print(f"   Doctor: {record['doctor']}")

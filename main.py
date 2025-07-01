@@ -1,19 +1,37 @@
 from users.patient import register_patient, login_patient, patient_menue
 from users.doctor import login_doctor
 
-while True:
-    print("\n==== MAIN MENU ====")
-    print("\n1. Register as Patient\n2. Login as Patient\n3. Login as a doctor\n4. To exit")
-    choise = input("Choose (1-4): ")
 
-    if choise == "1":
+from colorama import Fore, Style, init
+from art import tprint
+
+init(autoreset=True)
+
+while True:
+    print("\n")
+    print(Fore.LIGHTCYAN_EX + "=" * 70)
+    tprint("Clinic System", font="standard")  # Clean and not too heavy
+    print(Fore.LIGHTGREEN_EX + f"{'MAIN MENU':^70}")
+    print(Fore.LIGHTCYAN_EX + "=" * 70)
+
+    print(Fore.LIGHTWHITE_EX + "1. 📝  Register as Patient")
+    print(Fore.LIGHTWHITE_EX + "2. 👤  Login as Patient")
+    print(Fore.LIGHTWHITE_EX + "3. 🩺  Login as Doctor")
+    print(Fore.LIGHTWHITE_EX + "4. ❌  Exit")
+    print(Fore.LIGHTCYAN_EX + "=" * 70)
+
+    choice = input(Fore.LIGHTYELLOW_EX + "Choose (1-4): ").strip()
+
+    if choice == "1":
         register_patient()
-    elif choise == "2":
+    elif choice == "2":
         patient = login_patient()
         if patient:
             patient_menue(patient)
-    elif choise == "3":
+    elif choice == "3":
         login_doctor()
-    elif choise == "4":
-        exit()
-    else: print("Invalid input")
+    elif choice == "4":
+        print(Fore.LIGHTRED_EX + "\nExiting the system. Goodbye!\n")
+        break
+    else:
+        print(Fore.RED + "Invalid input. Please enter a number between 1 and 4.")

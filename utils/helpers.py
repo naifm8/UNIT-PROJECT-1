@@ -1,7 +1,11 @@
 from utils.file_handler import load_json, save_json
+from colorama import Fore
+
 
 def view_doctors():
-    print("\n==== AVAILABLE DOCTORS ====\n")
+    print(Fore.LIGHTCYAN_EX + "\n" + "-" * 30)
+    print(Fore.LIGHTWHITE_EX + f"{'==== AVAILABLE DOCTORS ====':^30}")
+    print(Fore.LIGHTCYAN_EX + "-" * 30 + "\n")
     doctors = load_json('data/doctors.json')
     if not doctors:
         print("No doctors found.")
@@ -26,7 +30,7 @@ def suggest_medicine_from_side_effects(reported_effects):
     return suggestions
 
 def ask_side_effects():
-    print("\n==== Side Effect Checker ====\n")
+    print("\n==== Effects Checker ====\n")
     
     SIDE_EFFECT_QUESTIONS = {
         "Dizziness": "Is the patient experiencing dizziness?",
