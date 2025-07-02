@@ -3,7 +3,6 @@ from colorama import Fore
 from tabulate import tabulate
 
 
-
 def view_doctors():
     print(Fore.LIGHTCYAN_EX + "\n" + "-" * 71)
     print(Fore.LIGHTWHITE_EX + f"{'==== AVAILABLE DOCTORS ====':^60}")

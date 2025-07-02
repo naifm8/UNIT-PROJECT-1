@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "username": "Khalidsa",
+    "full_name": "Khalid Ahmad",
+    "email": "khalid@hotmail.com",
+    "phone": "0590572557",
+    "password": "112233",
+    "age": 41,
+    "gender": "Male"
+  }
+]

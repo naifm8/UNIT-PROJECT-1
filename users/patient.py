@@ -56,13 +56,13 @@ def register_patient():
     while True:
         username  = input("Enter your username: ").strip()
         if not username:
-            print("username can't be empty.")
+            print(Fore.RED +"username can't be empty.")
             continue
         if username.isdigit():
-            print("User name can't be only numbers.")
+            print(Fore.RED +"User name can't be only numbers.")
             continue
         if any(p['username'].lower() == username.lower() for p in patients):
-            print("username already exists.")
+            print(Fore.RED +"username already exists.")
             continue
         break
 
@@ -70,10 +70,10 @@ def register_patient():
     while True:
            full_name = input("Enter your full name: ").strip()
            if not full_name:
-               print("Full name can't be empty.")
+               print(Fore.RED +"Full name can't be empty.")
                continue
            if any(char.isdigit() for char in full_name):
-               print("Full name can't contain numbers.")
+               print(Fore.RED +"Full name can't contain numbers.")
                continue
            break
     
@@ -81,7 +81,7 @@ def register_patient():
     while True:
             email = input("Email address: ").strip()
             if not email:
-                print("Email can't be empty.")
+                print(Fore.RED +"Email can't be empty.")
                 continue
             if not re.match(r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$", email):
                 print("Invalid email format")
@@ -333,7 +333,8 @@ def cancel_appointment(patient_name):
         break
 
 def view_medical_history(paitent_name):
-    record_file = f"data/records/{paitent_name}.json"
+    clean_name = paitent_name.replace(" ", "").lower()
+    record_file = f"data/records/{clean_name}.json"
 
     if not os.path.exists(record_file):
         print(Fore.LIGHTYELLOW_EX + "\n You have no medical history yet.")

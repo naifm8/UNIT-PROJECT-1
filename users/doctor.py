@@ -8,7 +8,7 @@ from colorama import Fore
 
 def doctor_menu(doctor):
     print(Fore.LIGHTCYAN_EX + "\n" + "-" * 37)
-    print(Fore.LIGHTWHITE_EX + f"{"==== DR.({doctor['name']}) PANEL ====":^30}")
+    print(Fore.LIGHTWHITE_EX + f"{"==== DOCTOR PANEL ====":^30}")
     print(Fore.LIGHTCYAN_EX + "-" * 37 + "\n")
     while True:
         print("1. View My Appointments")
@@ -90,7 +90,7 @@ def suggest_medicine_from_diagnosis(diagnosis):
 
 def add_diagnosis_and_prescription(doctor_name):
     print(Fore.LIGHTCYAN_EX + "\n" + "-" * 48)
-    print(Fore.LIGHTWHITE_EX + f"{"==== Add Prescription Based on Side Effects ====":^30}")
+    print(Fore.LIGHTWHITE_EX + f"{"==== Add Prescription Based on Effects ====":^30}")
     print(Fore.LIGHTCYAN_EX + "-" * 48 + "\n")
 
     patient = input("\nEnter patient full name: ").strip().lower()

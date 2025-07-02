@@ -15,7 +15,7 @@ def symptom_checker():
             a = input(q + " (yes/no): ").strip().lower()
             if a in ["yes", "no"]:
                 return a
-            print(" Please enter 'yes' or 'no'.")
+            print(Fore.RED +" Please enter 'yes' or 'no'.")
 
     # Ask questions
     skin = ask_yes_no("Do you have skin issues?")
